@@ -1,9 +1,28 @@
 :root{
   --dark-blue: #363f5f;
+  --color-expanse: #e92929;
+  --color-income: #12a454;
+}
+
+
+html{
+  font-size: 93.75%;
 }
 
 body{
   background: #f0f2f5;    
+}
+
+.sr-only{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border-width: 0;
 }
 
 .containers-day2 h2{    
@@ -26,11 +45,15 @@ header.day2 h1{
   font-weight: 100;
 }
 
+/* CONTAINER ==========================*/
+
 .containers-day2{
   width: 90vw;
   min-width: 800px;
   margin: auto;
 }
+
+/* FIRST SECTION ==========================*/
 
 .balance-day2{
   margin-top: -8rem;
@@ -53,6 +76,22 @@ header.day2 h1{
 .cards-day2 h3{
   font-weight: normal;
   font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cards-day2 h3 svg{
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+.cards-day2 h3 svg.expanse-icon{
+  color: var(--color-expanse);
+}
+
+.cards-day2 h3 svg.income-icon{
+  color: var(--color-income);
 }
 
 .cards-day2 p{
@@ -66,7 +105,34 @@ header.day2 h1{
   color: #fff;
 }
 
-.data-table-day2{
+/* SECOND SECTION ==========================*/
+
+.transaction-day2{
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.transaction-day2 a{
+  display: flex;
+  align-items: center;
+  color: #49aa26;
+  text-decoration: none;
+  font-weight: bold;
+  margin-bottom: 0.8rem;
+}
+
+.transaction-day2 a svg{
+  margin-right: 0.3rem;
+}
+
+.transaction-day2 a:hover{
+  color: #3dd705;
+}
+
+/* TABLE ==========================*/
+
+table.data-table-day2{
   width: 100%;
   border-spacing: 0 0.5rem;
   color: #969cb3;
@@ -74,7 +140,12 @@ header.day2 h1{
 
 table.data-table-day2 thead tr td:first-child,
 table.data-table-day2 tbody tr td:first-child{
-border-radius: 0.25rem 0 0 0.25rem;
+  border-radius: 0.25rem 0 0 0.25rem;
+}
+
+table.data-table-day2 thead tr td:last-child,
+table.data-table-day2 tbody tr td:last-child{
+  border-radius: 0 0.25rem 0.25rem 0;
 }
 
 
@@ -100,21 +171,49 @@ table.data-table-day2 tbody td{
   font-weight: normal;    
 }
 
+table.data-table-day2 tbody td svg{
+  width: 1.3rem;
+  height: 1.3rem;
+  color: var(--color-expanse);
+  opacity: 0.9;
+}
+
 td.description-day2{
   color: var(--dark-blue);
 }
 
 td.income-day2{
-  color: #12a454;
+  color: var(--color-income);
 }
 
 td.expanse-day2{
-  color: #e92929;
+  color: var(--color-expanse);
 }
+/* MODAL ==========================*/
+
+
+
+/* FOOTER ==========================*/
 
 footer.container-day2{
   text-align: center;
   padding: 4rem 0 2rem;
   color: var(--dark-blue);
   opacity: 0.6;
+}
+
+/* RESPONSIVE ==========================*/
+@media (min-width: 800px){
+  html{
+    font-size: 87.5%;
+  }
+
+  .balance-day2{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 2rem;
+  }
+
+  
+  
 }
