@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Modal } from './Modal';
+
 import { FiArrowUpCircle, FiArrowDownCircle, FiDollarSign, FiMinusCircle } from 'react-icons/fi';
 import { IoAddCircleOutline } from 'react-icons/io5'
 
@@ -6,20 +8,13 @@ import './styles.css';
 
 export const Day2 = () => {
 
+  const [isOpen, setIsOpen] = useState(false);
 
-  const modal = () => {
-    return (
-      <>
-        <div className="modal-overlay">
-          <div className="modal">
-            <div className="content">
-              Oi
-          </div>
-          </div>
-        </div>
-      </>
-    );
+  const toogleModal = () => {
+    setIsOpen((previousState) => !previousState);
   }
+
+
 
 
   return (
@@ -27,6 +22,7 @@ export const Day2 = () => {
       <header className="day2">
         <h1>DEV Finances$</h1>
       </header>
+
       <main className="containers-day2">
         <section className="balance-day2">
           <h2 className="sr-only">Balanço</h2>
@@ -61,7 +57,7 @@ export const Day2 = () => {
 
         <section className="transaction-day2">
           <h2 className="sr-only">Transações</h2>
-          <a href="#"><IoAddCircleOutline /> Nova Transação</a>
+          <a onClick={() => toogleModal()}><IoAddCircleOutline /> Nova Transação</a>
           <table className="data-table-day2">
 
             <thead>
@@ -107,6 +103,7 @@ export const Day2 = () => {
       <footer className="container-day2">
         <p>dev.finance$</p>
       </footer>
+      <Modal isOpen={isOpen} onClose={setIsOpen} />
     </>
   )
 }

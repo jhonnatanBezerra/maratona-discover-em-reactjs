@@ -2,6 +2,9 @@
   --dark-blue: #363f5f;
   --color-expanse: #e92929;
   --color-income: #12a454;
+  --color-green: #49aa26;
+  --color-ice: #f0f2f5;
+  --color-white: #fff;
 }
 
 
@@ -10,9 +13,9 @@ html{
 }
 
 body{
-  background: #f0f2f5;    
+  background: var(--color-ice);    
 }
-
+/* LEITOR DE TELA ==========================*/
 .sr-only{
   position: absolute;
   width: 1px;
@@ -41,7 +44,7 @@ header.day2{
 }
 
 header.day2 h1{
-  color: #fff;
+  color: var(--color-white);
   font-weight: 100;
 }
 
@@ -60,12 +63,12 @@ header.day2 h1{
 }
 
 .balance-day2 h2{
-  color: #fff;
+  color: var(--color-white);
   margin-top: 0;
 }
 
 .cards-day2{
-  background: #fff;
+  background: var(--color-white);
   padding: 1.5rem 2rem;
   border-radius: 0.25rem;
   margin-bottom: 2rem;
@@ -101,8 +104,8 @@ header.day2 h1{
 }
 
 .cards-day2.total-day2{
-  background: #49aa26;
-  color: #fff;
+  background: var(--color-green);
+  color: var(--color-white);
 }
 
 /* SECOND SECTION ==========================*/
@@ -116,10 +119,11 @@ header.day2 h1{
 .transaction-day2 a{
   display: flex;
   align-items: center;
-  color: #49aa26;
+  color: var(--color-green);
   text-decoration: none;
   font-weight: bold;
   margin-bottom: 0.8rem;
+  cursor: pointer;
 }
 
 .transaction-day2 a svg{
@@ -150,7 +154,7 @@ table.data-table-day2 tbody tr td:last-child{
 
 
 table.data-table-day2 thead th{
-  background: white;
+  background: var(--color-white);
   text-align: left;    
   font-weight: normal;
   padding: 1rem 2rem;
@@ -165,7 +169,7 @@ opacity: 1;
 }
 
 table.data-table-day2 tbody td{
-  background: white;
+  background: var(--color-white);
 
   padding: 1rem 2rem;
   font-weight: normal;    
@@ -176,6 +180,10 @@ table.data-table-day2 tbody td svg{
   height: 1.3rem;
   color: var(--color-expanse);
   opacity: 0.9;
+}
+
+table.data-table-day2 tbody td svg:hover{
+  cursor: pointer;
 }
 
 td.description-day2{
@@ -189,8 +197,9 @@ td.income-day2{
 td.expanse-day2{
   color: var(--color-expanse);
 }
-/* MODAL ==========================*/
 
+
+  
 
 
 /* FOOTER ==========================*/
